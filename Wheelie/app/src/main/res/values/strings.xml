@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Wheelie</string>
+
+    <string name="API_KEY">sk.eyJ1IjoiYXBwc291bCIsImEiOiJja3ZjYzc1cDIwN3Y3MnZxNXhzNXJ5OTdrIn0.wE4EORb6hOkBp94q_QlUlw</string>
+
+    <!-- page 1 strings -->
+    <string name="p1_Signin">SIGN IN</string>
+    <string name="p1_Register">REGISTER</string>
+    <string name="p1_lost_creds"> recover credentials</string>
+
+    <!-- page 2 strings singin -->
+    <string name="p2_Signin">SIGN IN</string>
+
+    <!-- page 3 string register -->
+    <string name="p3_Register">NEXT</string>
+
+    <string name="pay_prompt">Payment</string>
+    <string name="support_prompt">Support</string>
+    <string name="history_prompt">History</string>
+    <string name="header_title">title</string>
+
+</resources>

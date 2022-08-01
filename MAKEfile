@@ -1,0 +1,41 @@
+compile:
+	mvn compile
+
+clean:
+	mvn clean
+
+run:compile package
+	mvn exec:java
+
+check-dependencies:
+	mvn verify
+
+package:
+	mvn package -DskipTests
+
+test:
+	mvn test
+
+newpatch:
+	mvn validate -DbumpPatch
+
+newminor:
+	mvn validate -DbumpMinor
+
+newmajor:
+	mvn validate -DbumpMajor
+
+all: compile clean check-dependencies package 
+
+closeServer:
+	bash closeServer.sh
+
+testPersonal:
+	 mvn exec:java -Dexec.mainClass="za.co.wethinkcode.server.Server"&
+	 sleep 3 && echo 'running the tests'
+	 mvn test
+	 docker build -t gitlab.wethinkco.de:5050/sdubazan/wethinkcode .
+	 docker push gitlab.wethinkco.de:5050/sdubazan/wethinkcode
+	 $(MAKE) closeServer
+
+alltest: testPersonal testreference
